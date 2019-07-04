@@ -1,0 +1,182 @@
+// saving all exercises here before they get lost again
+
+ubuntu@ip-172-26-14-112:~$ cat question2.py
+
+
+celsius = float(raw_input('Enter Temperature in Celsius '))
+
+fahrenheit = 9.0/5.0 * celsius + 32
+
+print 'Temperature in Fahrehnheit is: ' + str(fahrenheit)
+
+ubuntu@ip-172-26-14-112:~$ cat question11.py
+filename = raw_input('Enter file name: ')
+
+try:
+fname = open(filename, "r").read().split()
+except:
+print'Invalid filename'
+exit()
+
+cleanstring = [''.join(e for e in string if e.isalnum()) for string in fname]
+
+clstring = ''.join(cleanstring)
+
+catstring = clstring.lower()
+
+freq={}
+
+for letter in catstring:
+if letter in freq:
+freq[letter] +=1
+else:
+freq[letter] = 1
+
+items = [(v,k) for k, v in freq.items()]
+items.sort()
+items.reverse()
+print items
+ubuntu@ip-172-26-14-112:~$  question5
+
+
+try:
+score = float(raw_input('Please enter a score between 0.0 and 10.0: '))
+except:
+print('Programme hit an error. Please try again. Make you you enter a numerical va
+lue')
+exit()
+
+if score > 10.0:
+print('Score too high, please enter score between 0.0. and 10.0')
+
+elif score>=9.0 :
+print('Grade A')
+
+elif score>=8.0 :
+print 'Grade B'
+
+elif score>=7.0 :
+print 'Grade C'
+
+elif score>=6.0 :
+print 'Grade D'
+
+else:
+print'F'
+
+
+ubuntu@ip-172-26-14-112:~$ cat  question6.py*
+def computegrade(score):
+
+score=float(score)
+
+if score>10.0 :
+print 'Score too high'
+
+elif score>=9.0 :
+print 'Grade A'
+
+elif score>=8.0 :
+print 'Grade B'
+
+elif score>=7.0 :
+print 'Grade C'
+
+elif score>=6.0 :
+print 'Grade D'
+
+else:
+print 'F'
+
+try:
+score=raw_input('Please enter a score between 0.0 and 10.0')
+computegrade(score)
+
+except:
+print('Programme has hit an error')
+exit()
+
+
+
+
+ubuntu@ip-172-26-14-112:~$ cat question7.py
+sm=0
+count=0
+average=0
+
+
+while True:
+try:
+num = raw_input('Please enter a number: ')
+if (num == 'done'):
+print('Total: ',str(sm),'Count: ',str(count),'Average: ',str(average))
+
+break
+else:
+
+value = float(num)
+sm = value + sm
+count = count +1
+average = sm / count
+
+except :
+print('Try again')
+
+
+
+
+ubuntu@ip-172-26-14-112:~$ cat question8.py
+filename = open(raw_input("Enter file name: "))
+
+for i in filename:
+i = i.rstrip().upper()
+print i
+
+
+ubuntu@ip-172-26-14-112:~$ cat question9.py
+fname = raw_input("Enter file name: ")
+
+if fname == "money makes the world go round":
+print'mo money mo problems'
+exit()
+else:
+
+try:
+filename = open(fname)
+
+for i in filename:
+i = i.rstrip().upper()
+print i
+except:
+print 'Invalid file name.'
+exit()
+ubuntu@ip-172-26-14-112:~$ 
+
+
+ubuntu@ip-172-26-14-112:~$ cat text.txt
+If everything seem under control,
+you're not going fast enough.
+
+-Mario Andretti
+
+
+
+ubuntu@ip-172-26-14-112:~$ cat redditapi.py
+import praw
+
+print('Successfully imported praw')
+
+r = praw.Reddit(client_id='jWYe3PeaHwI5oA',
+     client_secret='fWG4ZD3z1b8mENBsxZj1LH5U3a0',
+     user_agent='linux:my.training.api:v1 (by /u/4ny44)',
+     password='password@123')
+
+print  ('Successfully made a connection')
+
+#subreddit_name = raw_input('Enter subreddit name you wish to search')
+ 
+
+submission = r.submission(id='3g1jfi')
+
+for top_level_comment in submission.comments:
+print(top_level_comment.body)
