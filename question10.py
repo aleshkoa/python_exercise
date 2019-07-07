@@ -1,15 +1,9 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Sep 12 08:39:39 2018
-
-@author: anna.aleshko
-"""
 import re
 
 messages = {}
 
 try:
-    open_file = open('email.txt')
+    open_file = open(input('Please enter log file to read: '))
 
 except:
     print ('Missing email.txt in current directory')
