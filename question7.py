@@ -4,18 +4,19 @@ average=0
 
 
 while True:
-try:
-num = raw_input('Please enter a number: ')
-if (num == 'done'):
-print('Total: ',str(sm),'Count: ',str(count),'Average: ',str(average))
+    try:
+        num = input('Please enter a number: ')
+        if (num == 'done'):
+            print('Total: ',str(sm),'Count: ',str(count),'Average: ',str(average))
 
-break
-else:
+            break
 
-value = float(num)
-sm = value + sm
-count = count +1
-average = sm / count
+        else:
 
-except :
-print('Try again')
+            value = float(num)
+            sm = value + sm
+            count = count +1
+            average = sm / count
+
+    except :
+        print('Try again')
